@@ -1,0 +1,466 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Overall scss
+:root {
+    background-color: #1a1a1a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.heading {
+    position: relative;           /* To position the ::after pseudo-element */
+    display: inline-block;        /* Ensure the text size wraps only around the content */
+    font-size: 4.5vw;               /* Large font size */
+    font-weight: bold;            /* Bold text */
+    color: white;  
+    padding: 0px 10px;
+    margin-top: 1.5em;
+}
+
+.heading::after {
+    content: '';                  /* Required for pseudo-elements */
+    position: absolute;           /* Position the bar relative to the text */
+    right: -5px;                      /* Start at the left edge of the text */
+    bottom: 10px;                    /* Position it at the bottom of the text */
+    width: 75%;                   /* Adjust the width of the background (as needed) */
+    height: 20px;                 /* Height of the background bar */
+    background-color: #FF5A5A;    /* Red background color */
+    z-index: -1;  
+}
+
+// Navbar scss
+.nav {
+    background-color: #272727;
+    box-shadow: 10px 5px 5px black;
+    top: 0;
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // width: 25%;
+    margin-left: 65%;
+    margin-right: 5%;
+    color: white;
+    height: 3em;
+    font-size: 2vw;
+    transition: color 0.4s ease;
+}
+
+.nav ul li:hover {
+    color: #ff4a5c;
+}
+
+// Home page scss
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    font-size: 3.5vw;
+}
+
+.name {
+    color: #ff4a5c;
+}
+
+.view-button {
+    background: transparent;
+    color: #ff4a5c;
+    border: 3px solid #ff4a5c;
+    font-size: 2vw;
+    cursor: pointer;
+    padding: 0.3em 1em;
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 0.5s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.view-button:hover {
+    box-shadow: 10px 5px 5px black;
+    background-color: #272727;
+    color: white;
+    border-color: white;
+}
+
+.view-button p {
+    padding-right: 0.5em;
+}
+
+// About page scss
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    color: white;
+    margin-bottom: 2em;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.5vw;
+    padding: 5% 5% 5% 5%;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.about-profile {
+    width: 40%;
+    border: solid 5px #ff4a5c;
+    border-radius: 50%;
+    margin-bottom: 5%;
+    align-self: center;
+}
+
+.tech-bubble {
+    background: transparent;
+    border: solid 3px #ff4a5c;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 0.75em;
+    font-size: 1.5vw;
+    margin: 0.5em;
+}
+
+.tech-bubble img {
+    height: 4em;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.about-image div {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+// Projects page scss
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    color: white;
+    margin-top: 2em;
+}
+
+.project-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 80%;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    z-index: 500;
+}
+
+.project-left-image {
+    padding: 4% 10% 4% 0;
+    background-color: #3216bc;
+}
+
+.project-left-image img {
+    height: 30em;
+}
+
+.project-left-text {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4%;
+    align-items: start;
+    margin-left: -5%;
+    width: 40%;
+}
+
+.project-left-text h1 {
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+
+.project-left-text h2 {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.project-left-text p {
+    font-size: 1.25vw;
+}
+
+.project-left-text a {
+    background: transparent;
+    border-bottom: 3px solid #ff4a5c;
+    font-size: 1.25vw;
+    cursor: pointer;
+    padding: 0.3em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.5s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+.project-left-text a:hover {
+    color: #1a1a1a;
+    background-color: #ff4a5c;
+    border-color: none;
+}
+
+.project-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 80%;
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+.project-right-image {
+    padding: 4% 0 4% 10%;
+    background-color: #3216bc;
+}
+
+.project-right-image img {
+    height: 30em;
+}
+
+.project-right-text {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4%;
+    align-items: start;
+    margin-right: -5%;
+    width: 40%;
+    z-index: 500;
+}
+
+.project-right-text h1 {
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+
+.project-right-text h2 {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.project-right-text p {
+    font-size: 1.25vw;
+}
+
+.project-right-text a {
+    background: transparent;
+    border-bottom: 3px solid #ff4a5c;
+    font-size: 1.25vw;
+    cursor: pointer;
+    padding: 0.3em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.5s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+.project-right-text a:hover {
+    color: #1a1a1a;
+    background-color: #ff4a5c;
+    border-color: none;
+}
+
+
+// Contact page scss
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    color: white;
+    margin-top: 2em;
+    height: 100vh;
+    margin-bottom: 2em;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 30%;
+    margin-top: 2em;
+    font-size: 1vw;
+}
+
+.contact-form input {
+    background: transparent;
+    border: solid 1px #ff4a5c;
+    border-radius: 5px;
+    color: white;
+    padding: 0.3em 0.3em;
+    font-size: 1.5vw;
+    margin: 0.5em;
+    width: 100%
+}
+
+.contact-form textarea {
+    background: transparent;
+    border: solid 1px #ff4a5c;
+    border-radius: 5px;
+    color: white;
+    padding: 0.3em 0.3em;
+    font-size: 1.5vw;
+    margin: 0.5em;
+    width: 100%;
+    height: 7em;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+}
+
+.form-btn {
+    background: transparent;
+    border-bottom: 3px solid #ff4a5c;
+    font-size: 1.25vw;
+    cursor: pointer;
+    padding: 0.3em 1em;
+    transition: background-color 0.5s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+.form-btn:hover {
+    color: #1a1a1a;
+    background-color: #ff4a5c;
+    border-color: none;
+}
+
+footer {
+    background-color: #272727;
+    box-shadow: 10px 5px 5px black;
+    width: 100%;
+    font-size: 0.75em;
+    display: flex;
+    color: white;
+    padding-top: 2%;
+    flex-direction: column;
+    padding-bottom: 1%;
+    align-items: center;
+    justify-content: center;
+}
+
+footer img {
+    height: 3em;
+}
+
+footer img:hover {
+    height: 3em;
+    cursor: pointer;
+}
+
+.footer-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.to-top-btn {
+    background-color: #1a1a1a;
+    padding: 1em 0.5em;
+    border: 3px solid #ff4a5c;
+    border-radius: 5px;
+    color: #ff4a5c;
+}
+
+.to-top-btn:hover {
+    background-color: #1a1a1a;
+    padding: 1em 0.5em;
+    border: 3px solid white;
+    border-radius: 5px;
+    color: white;
+}
+
+.top-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -1.5em;
+}
+
+// Modal Styling
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    z-index: 999999;
+  }
+  
+  .modal {
+    color: white;
+    background: #272727;
+    height: 15em;
+    width: 30em;
+    border-radius: 8px;
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal input {
+    color: white;
+    background-color: #1a1a1a;
+    margin-top: 10px;
+    border: solid 1px #ff4a5c;
+    border-radius: 5px;
+    color: white;
+    padding: 0.3em 0.3em;
+    width: 25%;
+  }
+
+  .submit-captcha-button {
+    background: transparent;
+    color: #ff4a5c;
+    border: 3px solid #ff4a5c;
+    font-size: 1.25vw;
+    cursor: pointer;
+    padding: 0.3em 1em;
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 0.5s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  }
