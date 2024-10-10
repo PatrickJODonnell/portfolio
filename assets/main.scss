@@ -12,30 +12,30 @@ html {
 }
 
 .heading {
-    position: relative;           /* To position the ::after pseudo-element */
-    display: inline-block;        /* Ensure the text size wraps only around the content */
-    font-size: 4.5vw;               /* Large font size */
-    font-weight: bold;            /* Bold text */
+    position: relative;
+    display: inline-block;
+    font-size: 4.5vw;     
+    font-weight: bold;        
     color: white;  
-    padding: 0px 10px;
+    padding: 0px 2vw;
     margin-top: 1.5em;
 }
 
 .heading::after {
-    content: '';                  /* Required for pseudo-elements */
-    position: absolute;           /* Position the bar relative to the text */
-    right: -5px;                      /* Start at the left edge of the text */
-    bottom: 10px;                    /* Position it at the bottom of the text */
-    width: 75%;                   /* Adjust the width of the background (as needed) */
-    height: 20px;                 /* Height of the background bar */
-    background-color: #FF5A5A;    /* Red background color */
+    content: '';         
+    position: absolute;     
+    right: -1vw;              
+    bottom: 1vw;            
+    width: 75%;                 
+    height: 2vw;               
+    background-color: #FF5A5A;    
     z-index: -1;  
 }
 
 // Navbar scss
 .nav {
     background-color: #272727;
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 1vw 0.5vw 0.5vw black;
     top: 0;
     z-index: 999;
     position: fixed;
@@ -46,7 +46,6 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // width: 25%;
     margin-left: 65%;
     margin-right: 5%;
     color: white;
@@ -77,7 +76,7 @@ html {
 .view-button {
     background: transparent;
     color: #ff4a5c;
-    border: 3px solid #ff4a5c;
+    border: 0.3vw solid #ff4a5c;
     font-size: 2vw;
     cursor: pointer;
     padding: 0.3em 1em;
@@ -85,12 +84,12 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 0.5vw;
     transition: background-color 0.5s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .view-button:hover {
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 1vw 0.5vw 0.5vw black;
     background-color: #272727;
     color: white;
     border-color: white;
@@ -126,7 +125,7 @@ html {
 
 .about-profile {
     width: 40%;
-    border: solid 5px #ff4a5c;
+    border: solid 0.5vw #ff4a5c;
     border-radius: 50%;
     margin-bottom: 5%;
     align-self: center;
@@ -134,8 +133,8 @@ html {
 
 .tech-bubble {
     background: transparent;
-    border: solid 3px #ff4a5c;
-    border-radius: 5px;
+    border: solid 0.3vw #ff4a5c;
+    border-radius: 0.5vw;
     color: white;
     display: flex;
     flex-direction: column;
@@ -180,44 +179,62 @@ html {
     margin-top: 4em;
     margin-bottom: 4em;
     z-index: 500;
+    position: relative; // Add relative positioning
 }
 
 .project-left-image {
-    padding: 4% 10% 4% 0;
+    padding: 2% 0 2% 0; // Remove padding from the left side
+    width: 55%; // Adjust for smaller screens
+    position: relative; // Add relative positioning
+    z-index: 1; // Ensure it is above the text background
+}
+
+.project-left-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%; // Extend the background under part of the text
+    height: 100%;
     background-color: #3216bc;
+    z-index: -99; // Ensure it is below the image
 }
 
 .project-left-image img {
-    height: 30em;
+    width: 100%; // Adjust for smaller screens
+    height: auto; // Maintain aspect ratio
 }
 
 .project-left-text {
     display: flex;
     flex-direction: column;
-    padding-top: 4%;
+    padding-top: 2%;
     align-items: start;
-    margin-left: -5%;
-    width: 40%;
+    width: 45%; // Adjust for smaller screens
+    padding-left: 5%; // Add padding to the left
+    z-index: 0; // Ensure it is below the image
+    background: none; // Remove background color
+    z-index: 2;
 }
 
 .project-left-text h1 {
-    font-size: 2.5vw;
+    font-size: 2.75vw; // Slightly bigger text
     font-weight: bold;
 }
 
 .project-left-text h2 {
-    font-size: 2vw;
+    font-size: 2.25vw; // Slightly bigger text
     font-weight: bold;
 }
 
 .project-left-text p {
-    font-size: 1.25vw;
+    font-size: 1.5vw; // Slightly bigger text
 }
 
 .project-left-text a {
     background: transparent;
-    border-bottom: 3px solid #ff4a5c;
-    font-size: 1.25vw;
+    border-bottom: 0.3vw solid #ff4a5c;
+    font-size: 1.5vw; // Slightly bigger text
     cursor: pointer;
     padding: 0.3em 1em;
     display: flex;
@@ -239,45 +256,62 @@ html {
     width: 80%;
     margin-top: 4em;
     margin-bottom: 4em;
+    position: relative; // Add relative positioning
 }
 
 .project-right-image {
-    padding: 4% 0 4% 10%;
+    padding: 2% 0 2% 0; // Remove padding from the left side
+    width: 55%; // Adjust for smaller screens
+    position: relative; // Add relative positioning
+    z-index: 1; // Ensure it is above the text background
+}
+
+.project-right-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120%; // Extend the background under part of the text
+    height: 100%;
     background-color: #3216bc;
+    z-index: -1; // Ensure it is below the image
 }
 
 .project-right-image img {
-    height: 30em;
+    width: 100%; // Adjust for smaller screens
+    height: auto; // Maintain aspect ratio
 }
 
 .project-right-text {
     display: flex;
     flex-direction: column;
-    padding-top: 4%;
+    padding-top: 2%;
     align-items: start;
-    margin-right: -5%;
-    width: 40%;
-    z-index: 500;
+    width: 45%; // Adjust for smaller screens
+    padding-right: 5%; // Add padding to the right
+    z-index: 0; // Ensure it is below the image
+    background: none; // Remove background color
+    z-index: 2;
 }
 
 .project-right-text h1 {
-    font-size: 2.5vw;
+    font-size: 2.75vw; // Slightly bigger text
     font-weight: bold;
 }
 
 .project-right-text h2 {
-    font-size: 2vw;
+    font-size: 2.25vw; // Slightly bigger text
     font-weight: bold;
 }
 
 .project-right-text p {
-    font-size: 1.25vw;
+    font-size: 1.5vw; // Slightly bigger text
 }
 
 .project-right-text a {
     background: transparent;
-    border-bottom: 3px solid #ff4a5c;
-    font-size: 1.25vw;
+    border-bottom: 0.3vw solid #ff4a5c;
+    font-size: 1.5vw; // Slightly bigger text
     cursor: pointer;
     padding: 0.3em 1em;
     display: flex;
@@ -292,7 +326,6 @@ html {
     border-color: none;
 }
 
-
 // Contact page scss
 .contact {
     display: flex;
@@ -301,38 +334,37 @@ html {
     align-items: center;
     color: white;
     margin-top: 2em;
-    height: 100vh;
     margin-bottom: 2em;
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    width: 30%;
+    width: 70%;
+    font-size: 2.5vw;
     margin-top: 2em;
-    font-size: 1vw;
+}
+
+.contact-form p {
+    margin-left: 5%;
 }
 
 .contact-form input {
     background: transparent;
-    border: solid 1px #ff4a5c;
-    border-radius: 5px;
+    border: solid 0.1vw #ff4a5c;
+    border-radius: 0.5vw;
     color: white;
     padding: 0.3em 0.3em;
-    font-size: 1.5vw;
+    font-size: 3vw;
     margin: 0.5em;
     width: 100%
 }
 
 .contact-form textarea {
     background: transparent;
-    border: solid 1px #ff4a5c;
-    border-radius: 5px;
+    border: solid 0.1vw #ff4a5c;
+    border-radius: 0.5vw;
     color: white;
     padding: 0.3em 0.3em;
-    font-size: 1.5vw;
+    font-size: 3vw;
     margin: 0.5em;
     width: 100%;
     height: 7em;
@@ -347,8 +379,8 @@ html {
 
 .form-btn {
     background: transparent;
-    border-bottom: 3px solid #ff4a5c;
-    font-size: 1.25vw;
+    border-bottom: 0.3vw solid #ff4a5c;
+    font-size: 2.5vw;
     cursor: pointer;
     padding: 0.3em 1em;
     transition: background-color 0.5s ease, color 0.4s ease, border-color 0.4s ease;
@@ -362,12 +394,12 @@ html {
 
 footer {
     background-color: #272727;
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 1vw 0.5vw 0.5vw black;
     width: 100%;
     font-size: 0.75em;
     display: flex;
     color: white;
-    padding-top: 2%;
+    padding-top: calc(2% + 2em);
     flex-direction: column;
     padding-bottom: 1%;
     align-items: center;
@@ -392,16 +424,16 @@ footer img:hover {
 .to-top-btn {
     background-color: #1a1a1a;
     padding: 1em 0.5em;
-    border: 3px solid #ff4a5c;
-    border-radius: 5px;
+    border: 0.3vw solid #ff4a5c;
+    border-radius: 0.5vw;
     color: #ff4a5c;
 }
 
 .to-top-btn:hover {
     background-color: #1a1a1a;
     padding: 1em 0.5em;
-    border: 3px solid white;
-    border-radius: 5px;
+    border: 0.3vw solid white;
+    border-radius: 0.5vw;
     color: white;
 }
 
@@ -424,43 +456,43 @@ footer img:hover {
     align-items: center;
     justify-content: center; 
     z-index: 999999;
-  }
+}
   
-  .modal {
+.modal {
     color: white;
     background: #272727;
     height: 15em;
-    width: 30em;
-    border-radius: 8px;
+    width: 80%;
+    border-radius: 0.8vw;
     padding: 1em 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .modal input {
+.modal input {
     color: white;
     background-color: #1a1a1a;
     margin-top: 10px;
-    border: solid 1px #ff4a5c;
-    border-radius: 5px;
+    border: solid 0.1vw #ff4a5c;
+    border-radius: 0.5vw;
     color: white;
     padding: 0.3em 0.3em;
-    width: 25%;
-  }
+    width: 50%;
+}
 
-  .submit-captcha-button {
+.submit-captcha-button {
     background: transparent;
     color: #ff4a5c;
-    border: 3px solid #ff4a5c;
-    font-size: 1.25vw;
+    border: 0.3vw solid #ff4a5c;
+    font-size: 3vw;
     cursor: pointer;
     padding: 0.3em 1em;
     margin-top: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 0.5vw;
     transition: background-color 0.5s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-  }
+}

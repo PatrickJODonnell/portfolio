@@ -148,7 +148,7 @@
       </header>
       <div>
         <div class="home" id="home">
-          <h1>Hello, <span class="name">I'm Patrick.</span></h1>
+          <h1>Hi, <span class="name">I'm Patrick!</span></h1>
           <h1>I'm a Data Engineer and Web Developer.</h1>
           <button class="view-button" @click="navToAbout"> <p>View my work</p> <IconsDownArrow /> </button>
         </div>
