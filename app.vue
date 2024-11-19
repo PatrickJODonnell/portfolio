@@ -15,6 +15,25 @@
   const num2 = ref<number>(Math.floor(Math.random() * 10));
   const captchaAnswer = ref<string>('');
 
+  // Window Width
+  const windowWidth = ref(0);
+
+  // Function to update window width
+  const updateWindowWidth = () => {
+    windowWidth.value = window.innerWidth;
+  };
+
+  // Use onMounted to add the event listener (client-side only)
+  onMounted(() => {
+    updateWindowWidth(); // Set the initial width
+    window.addEventListener("resize", updateWindowWidth);
+  });
+
+  // Clean up the event listener
+  onBeforeUnmount(() => {
+    window.removeEventListener("resize", updateWindowWidth);
+  });
+
   // Handling Nav Button
   const navToAbout = (): void => {
     const about: HTMLElement | null = document.getElementById('about');
@@ -219,7 +238,7 @@
         </div>
         <div class="projects" id="projects">
           <h1 class="heading">Projects</h1>
-          <div class="project-left">
+          <div class="project-left" v-if="windowWidth >= 1301">
             <div class="project-left-image">
               <img src="~/assets/images/WageCheck.png" alt="Stock Market" />
             </div>
@@ -234,7 +253,24 @@
               <a href="https://github.com/PatrickJODonnell/WageCheck">Learn More</a>
             </div>
           </div>
-          <div class="project-right">
+          <div class="project-left" v-else>
+            <div class="project-left-image">
+              <img src="~/assets/images/WageCheck.png" alt="Stock Market" />
+            </div>
+            <div class="project-left-text">
+              <div style="width: 100%">
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                  <h1>WageCheck</h1>
+                  <a href="https://github.com/PatrickJODonnell/WageCheck">Learn More</a>
+                </div>
+                  <h2>Web Application</h2>
+              </div>
+              <p>
+                Full stack salary verification software built using MongoDB, Express.js, React.js, Node.js, and the OpenAI API.
+              </p>
+            </div>
+          </div>
+          <div class="project-right" v-if="windowWidth >= 1301">
             <div class="project-right-text">
               <h1>SpaceX Pipeline</h1>
               <h2>Data Pipeline</h2>
@@ -249,7 +285,24 @@
               <img src="~/assets/images/spacex.png" alt="Stock Market" />
             </div>
           </div>
-          <div class="project-left">
+          <div class="project-right" v-else>
+            <div class="project-right-image">
+              <img src="~/assets/images/spacex.png" alt="Stock Market" />
+            </div>
+            <div class="project-right-text">
+              <div style="width: 100%">
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                  <h1>SpaceX Pipeline</h1>
+                  <a href="https://github.com/PatrickJODonnell/SpaceXPipeline">Learn More</a>
+                </div>
+                  <h2>Data Pipeline</h2>
+              </div>
+              <p>
+                Fully automated and orchestrated data pipeline built with Python, Prefect, AWS Glue, and AWS Athena.
+              </p>
+            </div>
+          </div>
+          <div class="project-left" v-if="windowWidth >= 1301">
             <div class="project-left-image">
               <img src="~/assets/images/pnl.png" alt="Stock Market" />
             </div>
@@ -266,7 +319,24 @@
               <a href="https://github.com/PatrickJODonnell/PnLTutors">Learn More</a>
             </div>
           </div>
-          <div class="project-right">
+          <div class="project-left" v-else>
+            <div class="project-left-image">
+              <img src="~/assets/images/pnl.png" alt="Stock Market" />
+            </div>
+            <div class="project-left-text">
+              <div style="width: 100%">
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                  <h1>P&L Tutors Website</h1>
+                  <a href="https://github.com/PatrickJODonnell/PnLTutors">Learn More</a>
+                </div>
+                  <h2>Company Landing Site</h2>
+              </div>
+              <p>
+                Front-end landing site for a tutoring company built using HTML, CSS, and JavaScript.
+              </p>
+            </div>
+          </div>
+          <div class="project-right" v-if="windowWidth >= 1301">
             <div class="project-right-text">
               <h1>Remote Tool Crib</h1>
               <h2>Automated Tool Storage Solution</h2>
@@ -281,6 +351,26 @@
             </div>
             <div class="project-right-image">
               <img src="~/assets/images/rtc.png" alt="Stock Market" />
+            </div>
+          </div>
+          <div class="project-right" v-else>
+            <div class="project-right-image">
+              <img src="~/assets/images/rtc.png" alt="Stock Market" />
+            </div>
+            <div class="project-right-text">
+              <div style="width: 100%">
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                  <h1>Remote Tool Crib</h1>
+                  <div style="display: flex">
+                    <a href="https://youtu.be/XmzBWZpeXWw" style="margin-right: 1rem;">View Demo</a>
+                    <a href="https://github.com/PatrickJODonnell/RemoteToolCrib">Learn More</a>
+                  </div>
+                </div>
+                  <h2>Automated Tool Storage Solution</h2>
+              </div>
+              <p>
+                Physical tool storage device that includes RFID tracking, electromagnetic locks, integrated touch screen, and a fail safe database all tied together using a Python based software.
+              </p>
             </div>
           </div>
         </div>

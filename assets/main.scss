@@ -141,12 +141,12 @@ html {
     justify-content: center;
     align-items: center;
     padding: 0.5em 0.75em;
-    font-size: 1.5vw;
+    font-size: 2vw;
     margin: 0.5em;
 }
 
 .tech-bubble img {
-    height: 4em;
+    height: 4.75em;
 }
 
 .about-image {
@@ -367,7 +367,7 @@ html {
     font-size: 3vw;
     margin: 0.5em;
     width: 100%;
-    height: 7em;
+    height: 5em;
 }
 
 .btn-container {
@@ -423,7 +423,7 @@ footer img:hover {
 
 .to-top-btn {
     background-color: #1a1a1a;
-    padding: 1em 0.5em;
+    padding: 1.5em 1em;
     border: 0.3vw solid #ff4a5c;
     border-radius: 0.5vw;
     color: #ff4a5c;
@@ -431,7 +431,7 @@ footer img:hover {
 
 .to-top-btn:hover {
     background-color: #1a1a1a;
-    padding: 1em 0.5em;
+    padding: 1.5em 1em;
     border: 0.3vw solid white;
     border-radius: 0.5vw;
     color: white;
@@ -486,7 +486,7 @@ footer img:hover {
     background: transparent;
     color: #ff4a5c;
     border: 0.3vw solid #ff4a5c;
-    font-size: 3vw;
+    font-size: 1.5vw;
     cursor: pointer;
     padding: 0.3em 1em;
     margin-top: 1em;
@@ -495,4 +495,181 @@ footer img:hover {
     align-items: center;
     border-radius: 0.5vw;
     transition: background-color 0.5s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+@media screen and (max-width: 1300px) {
+    // header resizing
+    .nav ul {
+        font-size: 4vw;
+        margin-left: 40%;
+        margin-right: 5%;
+    }
+    // Home section resizing
+    .view-button {
+        font-size: 3vw;
+    }
+    // About section resizing
+    .about-content {
+        display: grid;
+        place-items: center;
+    }
+    .about-text {
+        font-size: 2vw;
+        width: 75%;
+    }
+    .about-profile {
+        width: 60%;
+    }
+    // Project section resizing
+    .projects {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        color: white;
+        margin-top: 2em;
+    }
+    
+    .project-left {
+        display: grid;
+        place-items: center;
+        width: 75%;
+    }
+    
+    .project-left-image {
+        padding: 2% 2% 2% 2%; // Remove padding from the left side
+        width: 100%; // Adjust for smaller screens
+    }
+    
+    .project-left-image::before {
+        width: 100%; 
+    }
+
+    .project-left-text {
+        display: flex;
+        flex-direction: column;
+        padding-top: 2%;
+        align-items: start;
+        width: 100%; // Adjust for smaller screens
+        z-index: 0; // Ensure it is below the image
+        background: none; // Remove background color
+        z-index: 2;
+    }
+    
+    .project-left-text h1 {
+        font-size: 3vw; // Slightly bigger text
+        font-weight: bold;
+    }
+    
+    .project-left-text h2 {
+        font-size: 2.5vw; // Slightly bigger text
+        font-weight: bold;
+    }
+    
+    .project-left-text p {
+        font-size: 2vw; // Slightly bigger text
+    }
+    
+    .project-left-text a {
+        background: transparent;
+        border-bottom: 0.3vw solid #ff4a5c;
+        font-size: 2vw; 
+        cursor: pointer;
+        padding: 0.3em 1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.5s ease, color 0.4s ease, border-color 0.4s ease;
+    }
+    
+    .project-right {
+        display: grid;
+        place-items: center;
+        width: 75%;
+    }
+    
+    .project-right-image {
+        padding: 2% 2% 2% 2%; // Remove padding from the left side
+        width: 100%; // Adjust for smaller screens
+    }
+    
+    .project-right-image::before {
+        width: 100%; 
+    }
+    
+    .project-right-text {
+        display: flex;
+        flex-direction: column;
+        padding-top: 2%;
+        align-items: start;
+        width: 100%; // Adjust for smaller screens
+        z-index: 0; // Ensure it is below the image
+        background: none; // Remove background color
+        z-index: 2;
+    }
+    
+    .project-right-text h1 {
+        font-size: 3vw; // Slightly bigger text
+        font-weight: bold;
+    }
+    
+    .project-right-text h2 {
+        font-size: 2.5vw; // Slightly bigger text
+        font-weight: bold;
+    }
+    
+    .project-right-text p {
+        font-size: 2vw; // Slightly bigger text
+    }
+    
+    .project-right-text a {
+        background: transparent;
+        border-bottom: 0.3vw solid #ff4a5c;
+        font-size: 2vw; 
+        cursor: pointer;
+        padding: 0.3em 1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.5s ease, color 0.4s ease, border-color 0.4s ease;
+    }
+    // Top Top button and footer resize
+    .to-top-btn {
+        padding: 2em 1.75em;
+    }
+    
+    .to-top-btn:hover {
+        padding: 2em 1.75em;
+    }
+    footer {
+        font-size: 1.5em;
+    }
+    // Heading resizes
+    .heading {
+        margin-top: 2.75em;
+    }
+    // Modal resizing      
+    .modal {
+        height: 40em;
+
+    }
+
+    .modal h2{
+        font-size: 3vw;
+    }
+
+    .modal h3 {
+        font-size: 2.5vw;
+    }
+    
+    .modal input {
+        margin-top: 20px;
+        padding: 0.5em 0.5em;
+        font-size: 2vw;
+    }
+    
+    .submit-captcha-button {
+        font-size: 2.5vw;
+        padding: 0.3em 1em;
+    }
 }
