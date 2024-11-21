@@ -119,7 +119,6 @@
       num1.value = Math.floor(Math.random() * 10);
       num2.value = Math.floor(Math.random() * 10);
 
-      console.log("Sending Message");
       // Sending the email
       const res = await $fetch('api/sendEmail', {
         method: 'POST',
@@ -128,8 +127,6 @@
         },
         body: JSON.stringify(requestBody)
       });
-      console.log("result", res);
-      console.log("Message Sent");
 
       // Calling to send success message
       returnMessage.value = 'Thanks for the message!';
