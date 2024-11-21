@@ -128,6 +128,7 @@
         },
         body: JSON.stringify(requestBody)
       });
+      console.log("result", res);
       console.log("Message Sent");
 
       // Calling to send success message
