@@ -14,6 +14,7 @@
   const num1 = ref<number>(Math.floor(Math.random() * 10));
   const num2 = ref<number>(Math.floor(Math.random() * 10));
   const captchaAnswer = ref<string>('');
+  const hamburgerToggle = ref<boolean>(false);
 
   // Window Width
   const windowWidth = ref(0);
@@ -33,6 +34,11 @@
   onBeforeUnmount(() => {
     window.removeEventListener("resize", updateWindowWidth);
   });
+
+  // Handling Hamburger Menu
+  const toggleHamMenu = (): void => {
+    hamburgerToggle.value = !hamburgerToggle.value;
+  }
 
   // Handling Nav Button
   const navToAbout = (): void => {
@@ -147,7 +153,7 @@
   <div>
     <NuxtLayout>
       <header>
-        <nav class="nav">
+        <nav v-if="windowWidth >= 1301" class="nav">
           <ul>
             <li>
               <a href="#home">Home</a>
@@ -163,6 +169,27 @@
             </li>
           </ul>
         </nav>
+        <div v-else class="hamburger">
+          <IconsHamburger @click="toggleHamMenu()" class="hamburgerImage" />
+        </div>
+        <div v-if="hamburgerToggle && windowWidth < 1301">
+          <nav class="hamburger-nav">
+            <ul>
+              <li>
+                <a href="#home" @click="toggleHamMenu()">Home</a>
+              </li>
+              <li>
+                <a href="#about" @click="toggleHamMenu()">About</a>
+              </li>
+              <li>
+                <a href="#projects" @click="toggleHamMenu()">Projects</a>
+              </li>
+              <li>
+                <a href="#contact" @click="toggleHamMenu()">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </header>
       <div>
         <div class="home" id="home">
